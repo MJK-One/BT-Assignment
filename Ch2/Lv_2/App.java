@@ -17,6 +17,7 @@ public class App {
                 calculator.setResult(newResults); // 새 결과 목록 설정
                 System.out.println("새로운 결과 목록: " + calculator.getResults());
             }
+        } else if ( modifyCommand.equals("no")) {
         } else {
             System.out.println("결과 목록이 없습니다.");
         }
@@ -27,14 +28,15 @@ public class App {
         // 결과 삭제 기능 추가
         System.out.println("결과를 삭제하시겠습니까? (yes / no)");
         String deleteCommand = sc.next();
-        if(!calculator.getResults().isEmpty()) {
+        if (!calculator.getResults().isEmpty()) {
             if (deleteCommand.equals("yes")) {
                 System.out.println("몇 번째 결과를 삭제하시겠습니까?");
                 int deleteCount = sc.nextInt();
-                calculator.removeResult(deleteCount-1); // 결과 삭제
+                calculator.removeResult(deleteCount - 1); // 결과 삭제
                 System.out.println("결과 삭제 후 목록: " + calculator.getResults());
             }
-        } else {
+        } else if (deleteCommand.equals("no")) {
+        }else {
             System.out.println("결과 목록이 없습니다.");
         }
     }
