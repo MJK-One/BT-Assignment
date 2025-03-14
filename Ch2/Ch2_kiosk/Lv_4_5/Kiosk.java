@@ -5,7 +5,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Kiosk {
-    private List<Menu> menus;
+//    // 캡슐화 X
+//    public List<Menu> menus;
+//
+//    생성자
+//    public Kiosk(List<Menu> menus) {
+//        this.menus = menus;
+//    }
+    private final List<Menu> menus;
 
     // 생성자
     public Kiosk(List<Menu> menus) {
@@ -22,6 +29,8 @@ public class Kiosk {
             for (int i = 0; i < menus.size(); i++) {
                 Menu menu = menus.get(i);
                 System.out.printf("%d. %s\n", i + 1, menu.getCategoryName());
+                // 캡슐화 X
+                // System.out.printf("%d. %s\n", i + 1, menu.categoryName());
             }
             System.out.println("0. 종료 | 종료");
 
@@ -49,6 +58,8 @@ public class Kiosk {
         for (int i = 0; i < items.size(); i++) {
             MenuItem item = items.get(i);
             System.out.printf("%d. %s | W %.1f | %s\n", i + 1, item.getName(), item.getPrice(), item.getDescription());
+            // 캘슐화 X
+            // System.out.printf("%d. %s | W %.1f | %s\n", i + 1, items.name, items.price, items.description);
         }
         System.out.println("0. 뒤로가기");
 
@@ -61,6 +72,8 @@ public class Kiosk {
         } else if (choice > 0 && choice <= items.size()) {
             MenuItem selectedItem = items.get(choice - 1);
             System.out.printf("선택한 메뉴: %s | W %.1f | %s\n", selectedItem.getName(), selectedItem.getPrice(), selectedItem.getDescription());
+            // 캡슐화 X
+            // System.out.printf("선택한 메뉴: %s | W %.1f | %s\n", selectedItem.name(), selectedItem.price(), selectedItem.description());
         } else {
             System.out.println("잘못된 선택입니다.");
         }

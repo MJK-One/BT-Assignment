@@ -4,8 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
+//     //캡슐화 X
+//     String categoryName;
+//     List<MenuItem> menuItems;
+//
+//        public Menu(String categoryName) {
+//        this.categoryName = categoryName;
+//        this.menuItems = menuItems;
+//    }
+//    //getter 삭제
+
     private final String categoryName;
     private final List<MenuItem> menuItems;
+
 
     // 생성자
     public Menu(String categoryName) {
